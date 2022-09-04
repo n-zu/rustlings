@@ -35,10 +35,7 @@ fn fruit_basket(basket: &mut HashMap<Fruit, u32>) {
         // TODO: Put new fruits if not already present. Note that you
         // are not allowed to put any type of fruit that's already
         // present!
-        if basket.get(&fruit).is_none() {
-            basket.insert(fruit, 3);
-        };
-        // basket.try_insert(fruit, 10); // unstable feature (#82766)
+        basket.entry(fruit).or_insert(3);
     }
 }
 
